@@ -1,5 +1,6 @@
 package com.exam.hmbft;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.SparseBooleanArray;
@@ -31,6 +32,8 @@ public class SelectMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checked = lstMenu.getCheckedItemPositions();
+                Intent intent = new Intent(SelectMenu.this, MenuCartActivty.class);
+                startActivity(intent);
             }
         });
 
