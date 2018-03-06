@@ -1,9 +1,12 @@
 package com.exam.hmbft;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.NumberPicker;
 
 public class MenuCartActivty extends AppCompatActivity {
+
+    private NumberPicker numberPicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
