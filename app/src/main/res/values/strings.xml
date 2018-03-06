@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ExampleHMBFT</string>
     <string name="select_table">Select Table</string>
+    <string name="confirm_order">Confirm Order</string>
 </resources>
