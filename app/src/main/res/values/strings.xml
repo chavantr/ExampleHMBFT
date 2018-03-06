@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ExampleHMBFT</string>
+    <string name="select_table">Select Table</string>
+</resources>
