@@ -3,4 +3,6 @@
     <string name="select_table">Select Table</string>
     <string name="confirm_order">Confirm Order</string>
     <string name="item">Item</string>
+    <string name="request_order">Request Order</string>
+    <string name="order_placed_order_will_serve_in_10_minute">Order placed, order will serve in 10 minute.\n Thank You </string>
 </resources>
