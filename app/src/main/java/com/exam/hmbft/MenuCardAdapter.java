@@ -38,12 +38,23 @@ public class MenuCardAdapter extends RecyclerView.Adapter<MenuCardAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         viewHolder.lblItemName.setText(lstMenu.get(position).getName());
         viewHolder.npCount.setDisplayedValues(new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"});
         viewHolder.npCount.setMinValue(1);
         viewHolder.npCount.setMaxValue(10);
+
+        viewHolder.npCount.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
+
+                if (i != i1) {
+                    lstMenu.get(position).setCount(i1);
+                }
+
+            }
+        });
 
 
     }

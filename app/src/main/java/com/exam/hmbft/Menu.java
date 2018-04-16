@@ -8,13 +8,15 @@ public class Menu {
     private String description;
     private double price;
     private String type;
+    private int count;
 
-    public Menu(int id, String name, String description, double price, String type) {
+    public Menu(int id, String name, String description, double price, String type, int count) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.type = type;
+        this.count = count;
     }
 
     public int getId() {
@@ -55,5 +57,13 @@ public class Menu {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }

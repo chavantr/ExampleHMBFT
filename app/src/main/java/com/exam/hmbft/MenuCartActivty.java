@@ -26,6 +26,9 @@ public class MenuCartActivty extends AppCompatActivity {
         btnOrderBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
                 Intent intent = new Intent(MenuCartActivty.this, ConfirmationActivity.class);
                 startActivity(intent);
             }
