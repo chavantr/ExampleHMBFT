@@ -1,5 +1,6 @@
 package com.exam.hmbft;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
@@ -37,6 +38,34 @@ public class HttpConnectionUtil {
     }
 
     public String requestPost(String url, JSONObject request) {
+
+        try {
+            URL uri = new URL(url);
+            HttpURLConnection httpURLConnection = (HttpURLConnection) uri.openConnection();
+            httpURLConnection.setRequestProperty("Content-Type", "application/json");
+            httpURLConnection.setRequestProperty("Accept", "application/json");
+            httpURLConnection.setRequestMethod("POST");
+            DataOutputStream dataOutputStream = new DataOutputStream(httpURLConnection.getOutputStream());
+            dataOutputStream.writeBytes(request.toString());
+            dataOutputStream.flush();
+            dataOutputStream.close();
+            httpURLConnection.connect();
+            int responseCode = httpURLConnection.getResponseCode();
+            if (responseCode == 200) {
+                InputStream inputStream = new BufferedInputStream(httpURLConnection.getInputStream());
+                return convertStreamToString(inputStream);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        return null;
+    }
+
+
+    public String requestPost(String url, JSONArray request) {
 
         try {
             URL uri = new URL(url);

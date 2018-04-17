@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     private List<String> lstTables = new ArrayList<>();
     private RecyclerView lstTable;
     private TableAdapter tableAdapter;
+    public static int tableNo;
 
 
     @Override
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         if (id > 0) {
             Intent intent = new Intent(this, SelectMenu.class);
             intent.putExtra("id", id);
+            tableNo = id;
             startActivity(intent);
         }
     }
